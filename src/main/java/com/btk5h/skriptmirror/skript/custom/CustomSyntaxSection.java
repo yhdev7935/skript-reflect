@@ -166,8 +166,8 @@ public abstract class CustomSyntaxSection<T extends CustomSyntaxSection.SyntaxDa
       File script = which.getScript();
 
       Map<String, T> syntaxes = primaryData.get(script);
-      if (syntaxes.size() != 0) syntaxes.remove(which.getPattern());
-      if (syntaxes.size() == 0) {
+      if (syntaxes != null) syntaxes.remove(which.getPattern());
+      if (syntaxes != null && syntaxes.size() == 0) {
         primaryData.remove(script);
       }
 
